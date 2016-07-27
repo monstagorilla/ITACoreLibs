@@ -1,0 +1,15 @@
+[submodule "ITABase"]
+	path = ITABase
+	url = https://git.rwth-aachen.de/ita/ITABase.git
+[submodule "ITAConvolution"]
+	path = ITAConvolution
+	url = https://git.rwth-aachen.de/ita/ITAConvolution.git
+[submodule "ITACTC"]
+	path = ITACTC
+	url = https://git.rwth-aachen.de/ita/ITACTC.git
+[submodule "ITADataSources"]
+	path = ITADataSources
+	url = https://git.rwth-aachen.de/ita/ITADataSources.git
+[submodule "ITAFFT"]
+	path = ITAFFT
+	url = https://git.rwth-aachen.de/ita/ITAFFT.git
