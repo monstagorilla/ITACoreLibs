@@ -14,6 +14,12 @@ list( APPEND CMAKE_MODULE_PATH "$ENV{VISTA_CMAKE_COMMON}" )
 
 include( VistaCommon )
 
+# Because submodule require some legacy code, overwrite default settings of ITABase here ...
+set( ITA_BASE_WITH_OLD_ATOMICS ON )
+set( ITA_BASE_WITH_REGULAR_EXPRESSIONS ON )
+set( ITA_BASE_WITH_CONFIG_OLD_IMPL ON )
+set( ITA_BASE_WITH_OLD_RAVEN_OPS ON )
+
 # VA
 add_subdirectory( ITABase )
 add_subdirectory( ITAFFT )
