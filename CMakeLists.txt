@@ -37,7 +37,10 @@ endif()
 
 # ITACoreLibs submodules
 add_subdirectory( ITABase )
-add_subdirectory( ITAFFT )
-add_subdirectory( ITADataSources )
 add_subdirectory( ITAConvolution )
 add_subdirectory( ITACTC )
+add_subdirectory( ITADataSources )
+add_subdirectory( ITAFFT )
+add_subdirectory( ITAGeo )
+add_subdirectory( ITASampler )
+add_subdirectory( ITAStreaming )
