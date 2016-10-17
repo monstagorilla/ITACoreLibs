@@ -13,3 +13,15 @@
 [submodule "ITAFFT"]
 	path = ITAFFT
 	url = https://git.rwth-aachen.de/ita/ITAFFT.git
+[submodule "ITAGeo"]
+	path = ITAGeo
+	url = https://git.rwth-aachen.de/ita/ITAGeo.git
+[submodule "ITASampler"]
+	path = ITASampler
+	url = https://git.rwth-aachen.de/ita/ITASampler.git
+[submodule "ITADiffraction"]
+	path = ITADiffraction
+	url = https://git.rwth-aachen.de/ita/ITADiffraction.git
+[submodule "ITAStreaming"]
+	path = ITAStreaming
+	url = https://git.rwth-aachen.de/ita/ITAStreaming.git
