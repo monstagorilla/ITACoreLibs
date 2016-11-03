@@ -11,6 +11,7 @@ list( APPEND CMAKE_MODULE_PATH "$ENV{VISTA_CMAKE_COMMON}" )
 
 include( VistaCommon )
 
+set( ITA_CORE_LIBS_COMMON_BUILD TRUE )
 
 # Some global settings for static/shared library generation
 if( NOT DEFINED ITA_CORE_LIBS_BUILD_STATIC )
@@ -37,11 +38,11 @@ endif()
 
 # ITACoreLibs submodules
 add_subdirectory( ITABase )
-add_subdirectory( ITAConvolution )
-add_subdirectory( ITACTC )
-add_subdirectory( ITADataSources )
+add_subdirectory( ITAGeo )
 add_subdirectory( ITADiffraction )
 add_subdirectory( ITAFFT )
-add_subdirectory( ITAGeo )
-add_subdirectory( ITASampler )
 add_subdirectory( ITAStreaming )
+add_subdirectory( ITADataSources )
+add_subdirectory( ITAConvolution )
+add_subdirectory( ITACTC )
+add_subdirectory( ITASampler )
