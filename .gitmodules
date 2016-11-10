@@ -25,3 +25,6 @@
 [submodule "ITAStreaming"]
 	path = ITAStreaming
 	url = https://git.rwth-aachen.de/ita/ITAStreaming.git
+[submodule "ITAQtWidgets"]
+	path = ITAQtWidgets
+	url = https://git.rwth-aachen.de/ita/ITAQtWidgets
