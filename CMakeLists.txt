@@ -11,17 +11,19 @@ list( APPEND CMAKE_MODULE_PATH "$ENV{VISTA_CMAKE_COMMON}" )
 
 include( VistaCommon )
 
-set( ITA_CORE_LIBS_COMMON_BUILD TRUE )
 
 # Some global settings for static/shared library generation
-if( NOT DEFINED ITA_CORE_LIBS_BUILD_STATIC )
-	set( ITA_CORE_LIBS_BUILD_STATIC OFF CACHE BOOL "Build all ITA core libs in static mode" )
-endif( NOT DEFINED ITA_CORE_LIBS_BUILD_STATIC )
-
 if( NOT DEFINED ITA_VISTA_BUILD_STATIC )
 	set( ITA_VISTA_BUILD_STATIC OFF CACHE BOOL "Build against static ViSTA libraries" )
-endif( NOT DEFINED ITA_VISTA_BUILD_STATIC )
+endif( )
 
+# Apps and tests
+if( NOT DEFINED ITA_CORE_LIBS_WITH_APPS )
+	set( ITA_CORE_LIBS_WITH_APPS ON CACHE BOOL "Build ITACoreLibs applications" )
+endif()
+if( NOT DEFINED ITA_CORE_LIBS_WITH_TESTS )
+	set( ITA_CORE_LIBS_WITH_TESTS OFF CACHE BOOL "Build ITACoreLibs tests" )
+endif( )
 
 # Because submodules (and RAVEN) require some legacy code, overwrite default settings of ITABase
 set( ITA_BASE_WITH_OLD_ATOMICS ON CACHE BOOL "Build with old atomic code for non-C++11 compatible compilers" )
@@ -37,6 +39,7 @@ endif()
 
 
 # ITACoreLibs submodules
+set( ITA_CORE_LIBS_COMMON_BUILD TRUE )
 add_subdirectory( ITABase )
 add_subdirectory( ITAFFT )
 add_subdirectory( ITAStreaming )
