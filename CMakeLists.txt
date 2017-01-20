@@ -11,7 +11,6 @@ list( APPEND CMAKE_MODULE_PATH "$ENV{VISTA_CMAKE_COMMON}" )
 
 include( VistaCommon )
 
-
 # Some global settings for static/shared library generation
 if( NOT DEFINED ITA_VISTA_BUILD_STATIC )
 	set( ITA_VISTA_BUILD_STATIC OFF CACHE BOOL "Build against static ViSTA libraries" )
@@ -37,7 +36,6 @@ if( MSVC )
 	add_definitions( "/wd4251 /W4 -D_CRT_SECURE_NO_WARNINGS" )
 endif()
 
-
 # ITACoreLibs submodules
 set( ITA_CORE_LIBS_COMMON_BUILD TRUE )
 add_subdirectory( ITABase )
@@ -47,3 +45,12 @@ add_subdirectory( ITADataSources )
 add_subdirectory( ITAConvolution )
 add_subdirectory( ITACTC )
 add_subdirectory( ITASampler )
+
+if( MSVC )
+	set( ITA_CORE_LIBS_INCLUDE_EXTERNAL_MSVC_PROJECTS OFF CACHE BOOL "If enabled, msvc projects of external vista packages will be included in the solution" )
+	if( ITA_CORE_LIBS_INCLUDE_EXTERNAL_MSVC_PROJECTS )
+		vista_use_package( VistaCoreLibs )
+		vista_add_external_msvc_project_of_package( VistaCoreLibs "VistaCoreLibs" DEPENDENT ITABase DEPENDS VistaBase VistaInterProcComm VistaTools )
+		message( "hi" )
+	endif( )
+endif( )
