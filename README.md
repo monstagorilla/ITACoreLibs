@@ -4,7 +4,7 @@ ITACoreLibs is a collection of C++ libraries with basic tools for virtual acoust
 
 ### License
 
-This projects does not include any source code. See license file of the corresponding submodules.
+This projects does not include any source code. See license file of the corresponding submodules / subfolders.
 
 ### Quick build guide
 
