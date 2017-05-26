@@ -28,7 +28,7 @@ endif( )
 set( ITA_BASE_WITH_OLD_ATOMICS ON CACHE BOOL "Build with old atomic code for non-C++11 compatible compilers" )
 set( ITA_BASE_WITH_REGULAR_EXPRESSIONS ON CACHE BOOL "Build with old regular expressions code for string manipulation" )
 set( ITA_BASE_WITH_CONFIG_OLD_IMPL ON CACHE BOOL "Build with old INI file configuration implementation (uses legacy regular expressions)" )
-set( ITA_BASE_WITH_OLD_RAVEN_OPS ON CACHE BOOL "Build with old ITAOps helper functions implementation (legacy code for RAVEN compatibility)" )
+set( ITA_BASE_WITH_OLD_RAVEN_OPS ON CACHE BOOL "Build with old RavenOps helper functions implementation (legacy code for RAVEN compatibility)" )
 
 
 # Compiler
@@ -43,9 +43,11 @@ add_subdirectory( ITAFFT )
 add_subdirectory( ITAStreaming )
 add_subdirectory( ITADataSources )
 add_subdirectory( ITAConvolution )
+add_subdirectory( ITADSP )
 add_subdirectory( ITACTC )
 add_subdirectory( ITASampler )
 
+# Project
 if( MSVC )
 	set( ITA_CORE_LIBS_INCLUDE_EXTERNAL_MSVC_PROJECTS OFF CACHE BOOL "If enabled, msvc projects of external vista packages will be included in the solution" )
 	if( ITA_CORE_LIBS_INCLUDE_EXTERNAL_MSVC_PROJECTS )
