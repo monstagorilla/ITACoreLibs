@@ -20,4 +20,4 @@ limitations under the License.
 
 ### Quick build guide
 
-Follow instructions from Wiki pages of [ITABase](https://git.rwth-aachen.de/ita/ITABase/wikis/home) project.
+Follow instructions from Wiki pages of [ITACoreLibs](https://git.rwth-aachen.de/ita/ITACoreLibs/wikis/home) project.
