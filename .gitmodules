@@ -20,5 +20,7 @@
 	path = ITAStreaming
 	url = https://git.rwth-aachen.de/ita/ITAStreaming.git
 [submodule "ITADSP"]
+
 	path = ITADSP
+
 	url = https://git.rwth-aachen.de/ita/ITADSP
