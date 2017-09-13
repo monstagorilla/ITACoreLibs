@@ -1,26 +1,32 @@
 [submodule "ITABase"]
 	path = ITABase
 	url = https://git.rwth-aachen.de/ita/ITABase.git
+	branch = master
 [submodule "ITAConvolution"]
 	path = ITAConvolution
 	url = https://git.rwth-aachen.de/ita/ITAConvolution.git
+	branch = master
 [submodule "ITACTC"]
 	path = ITACTC
 	url = https://git.rwth-aachen.de/ita/ITACTC.git
+	branch = master
 [submodule "ITADataSources"]
 	path = ITADataSources
 	url = https://git.rwth-aachen.de/ita/ITADataSources.git
+	branch = master
 [submodule "ITAFFT"]
 	path = ITAFFT
 	url = https://git.rwth-aachen.de/ita/ITAFFT.git
+	branch = master
 [submodule "ITASampler"]
 	path = ITASampler
 	url = https://git.rwth-aachen.de/ita/ITASampler.git
+	branch = master
 [submodule "ITAStreaming"]
 	path = ITAStreaming
 	url = https://git.rwth-aachen.de/ita/ITAStreaming.git
+	branch = master
 [submodule "ITADSP"]
-
 	path = ITADSP
-
 	url = https://git.rwth-aachen.de/ita/ITADSP
+	branch = master
