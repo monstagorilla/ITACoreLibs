@@ -16,6 +16,8 @@ if( NOT DEFINED ITA_VISTA_BUILD_STATIC )
 	set( ITA_VISTA_BUILD_STATIC OFF CACHE BOOL "Build against static ViSTA libraries" )
 endif( )
 
+set( ITA_CORE_LIBS_BUILD_STATIC NOT ${BUILD_SHARED_LIBS} )
+
 # Apps and tests
 if( NOT DEFINED ITA_CORE_LIBS_WITH_APPS )
 	set( ITA_CORE_LIBS_WITH_APPS ON CACHE BOOL "Build ITACoreLibs applications" )
