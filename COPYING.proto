@@ -7,7 +7,7 @@ selected that require linking against libraries that include a copyleft.
 
 GNU GPL dependencies: @GPL_DEPENDENCIES@
 
-> This distribution is subject to VA's selective license dependency and may require you to publish your derived work under a copyleft license as well. The details are described in [README.md](https://git.rwth-aachen.de/ita/ITACoreLibs/) of ITACoreLibs.
+> This distribution is subject to ITA's selective license dependency and may require you to publish your derived work under a copyleft license as well. The details are described in [README.md](https://git.rwth-aachen.de/ita/ITACoreLibs/) of ITACoreLibs.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the @SELECTED_LICENSE@ as published by
