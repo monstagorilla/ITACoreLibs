@@ -48,6 +48,23 @@ add_subdirectory( ITADSP )
 add_subdirectory( ITACTC )
 add_subdirectory( ITASampler )
 
+# Selective license
+if( CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR )
+	if( ITA_SELECTIVE_LICENSE_DEPENDENCY_GPL )
+	
+		message( "The configuration you have selected requires copying under the terms of the GNU General Public License. This license includes a copyleft and may require your source code to be published under the same terms. Please respect the license agreements. Will generate the license for the distribution." )
+		
+		set( SELECTED_LICENSE "GNU General Public License" )
+		set( GPL_DEPENDENCIES "FFTW3" )
+		configure_file( COPYING.proto ${CMAKE_CURRENT_SOURCE_DIR}/COPYING @ONLY )
+		install( FILES COPYING DESTINATION . )
+		
+	endif( )
+else( )
+	set( ITA_SELECTIVE_LICENSE_DEPENDENCY_GPL ${ITA_SELECTIVE_LICENSE_DEPENDENCY_GPL} PARENT_SCOPE )
+endif( )
+
+
 # Project
 if( MSVC )
 	set( ITA_CORE_LIBS_INCLUDE_EXTERNAL_MSVC_PROJECTS OFF CACHE BOOL "If enabled, msvc projects of external vista packages will be included in the solution" )
