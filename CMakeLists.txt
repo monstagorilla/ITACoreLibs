@@ -18,12 +18,15 @@ endif( )
 
 set( ITA_CORE_LIBS_BUILD_STATIC NOT ${BUILD_SHARED_LIBS} )
 
-# Apps and tests
+# Apps and tests and benchmarks
 if( NOT DEFINED ITA_CORE_LIBS_WITH_APPS )
 	set( ITA_CORE_LIBS_WITH_APPS ON CACHE BOOL "Build ITACoreLibs applications" )
 endif()
 if( NOT DEFINED ITA_CORE_LIBS_WITH_TESTS )
 	set( ITA_CORE_LIBS_WITH_TESTS OFF CACHE BOOL "Build ITACoreLibs tests" )
+endif( )
+if( NOT DEFINED ITA_CORE_LIBS_WITH_BENCHMARKS )
+	set( ITA_CORE_LIBS_WITH_BENCHMARKS OFF CACHE BOOL "Build ITACoreLibs benchmarks" )
 endif( )
 
 # Because submodules (and RAVEN) require some legacy code, overwrite default settings of ITABase
