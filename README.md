@@ -13,7 +13,7 @@ Unfortunately, any copyleft license, notably the GNU General Public License (GPL
 
 #### ITACoreLibs code license
 
-Copyright 2015-2019 Institute of Technical Acoustics (ITA), RWTH Aachen University.
+Copyright 2015-2020 Institute of Technical Acoustics (ITA), RWTH Aachen University.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use files of this project except in compliance with the License.
