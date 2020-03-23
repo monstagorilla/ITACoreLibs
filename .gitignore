@@ -1,3 +1,5 @@
 COPYING
 build*
 dist*
+*.json
+*.wav
