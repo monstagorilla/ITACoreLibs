@@ -65,7 +65,6 @@ if (MSVC)
 endif ()
 
 # ITACoreLibs submodules
-set (ITA_CORE_LIBS_COMMON_BUILD TRUE)
 add_subdirectory (ITABase)
 add_subdirectory (ITAFFT)
 add_subdirectory (ITADataSources)
