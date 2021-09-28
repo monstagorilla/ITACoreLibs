@@ -74,7 +74,10 @@ add_subdirectory (ITADSP)
 add_subdirectory (ITACTC)
 add_subdirectory (ITASampler)
 
-# Selective license
+#Add dummy target (can be used to check whether ITACoreLibs are already included)
+add_custom_target( ${PROJECT_NAME} ALL )
+
+# Install - Selective license
 if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 	if (ITA_SELECTIVE_LICENSE_DEPENDENCY_GPL)
 
@@ -85,7 +88,7 @@ if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 		set (SELECTED_LICENSE "GNU General Public License")
 		set (GPL_DEPENDENCIES "FFTW3")
 		configure_file (COPYING.proto ${CMAKE_CURRENT_BINARY_DIR}/COPYING @ONLY)
-		install (FILES ${CMAKE_CURRENT_BINARY_DIR}/COPYING DESTINATION .)
+		install (FILES ${CMAKE_CURRENT_BINARY_DIR}/COPYING DESTINATION . COMPONENT ${PROJECT_NAME} )
 
 	endif ()
 else ()
