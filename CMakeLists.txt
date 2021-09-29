@@ -79,8 +79,13 @@ add_subdirectory (ITADSP)
 add_subdirectory (ITACTC)
 add_subdirectory (ITASampler)
 
-#Add dummy target (can be used to check whether ITACoreLibs are already included)
-add_custom_target( ${PROJECT_NAME} ALL )
+#Add all-build target (can also be used to check whether ITACoreLibs are already included)
+add_custom_target( ${PROJECT_NAME}
+	DEPENDS ITABase::ITABase ITAFFT:: ITADataSources::ITADataSources ITAConvolution::ITAConvolution ITADSP::ITADSP ITACTC::ITACTC ITASampler::ITASampler
+	COMMAND ${CMAKE_COMMAND} -E echo "----------------------------------------------"
+	COMMAND ${CMAKE_COMMAND} -E echo "Finished building all ITACorelibs subprojects."
+	COMMAND ${CMAKE_COMMAND} -E echo "----------------------------------------------"
+)
 
 # Install - Selective license
 if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
