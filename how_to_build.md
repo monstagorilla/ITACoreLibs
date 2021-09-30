@@ -9,7 +9,7 @@ Our projects use CMake as a build system generator. To ease the build process, m
 ## Requirements
 ### General requirements
 
-- CMake Version 3.20 or higher
+- CMake Version 3.20.6 or higher
 - C++11 compatible compiler (only tested with Visual C++ 19)
 
 In case you are using Visual Studio, you can use the integrated CMake version. See [Windows with Visual Studio](#windows-with-visual-studio) section for further information.
@@ -31,30 +31,7 @@ In case you are working at our institute, these libraries can be found on our se
 
 ## Known issues
 
-CMake has a character limit for its build paths. This means, that the path to some source files can be too long. In these cases CMake will issue a warning. If this happens, try to move the top-level source folder up in your directory tree.
-A safe place should be the main drive folder, e.g. `D:\`.
-
-## Windows with Visual Studio
-
-This is probably the easiest way to build to build this project on windows. One of the benefits, is that it has minimal requirements.
-
-### Visual Studio version
-
-- Visual Studio 2019, Version 16.10.4 and above; lower versions will also work. 
-  The limiting factor is the bundled CMake version, which should be higher than 3.20.
-  Note, that the **C++ CMake Tools for Windows** have to be installed with Visual Studio ([reference](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-160)).
-
-### Build
-
-1. Start Visual Studio.
-2. Click on `Continue without code`/`Ohne Code fortfahren`.
-3. `File`/`Datei` -> `Open`/`Öffnen` -> `CMake...`.
-4. Choose the top-level `CMakeLists.txt` file.
-5. Wait till the configuration is finished.
-6. `Build`/`Erstellen` -> `Build all`/`Alle erstellen` or `Install "PROJECT NAME"`/`"PROJECT NAME" installieren`.
-7. And you are done.
-   The build results can be found in `*project_folder*/out/build/*build_configuration*/[Debug|Release|...]`
-   While the install results can be found in `*project_folder*/out/install/*build_configuration*`
+CMake has a character limit for its build paths. This means, that the path to some source files can be too long. In these cases CMake will issue a warning. If this happens, try to move the top-level source folder up in your directory tree. A safe place should be the main drive folder, e.g. `D:\`.
 
 
 ## General CMake
@@ -80,6 +57,31 @@ cmake ..
 cmake --build
 cmake --install
 ```
+
+
+## Windows with Visual Studio
+
+Another way to build this project on windows. Does not require a separate installation of CMake. However, CMake configuration can be tricky sometimes.
+
+### Visual Studio version
+
+- Visual Studio 2019, Version 16.10.4 and above; lower versions will also work.  
+  The limiting factor is the bundled CMake version, which should match the [general requirements](#general-requirements).  
+  Note, that the **C++ CMake Tools for Windows** have to be installed with Visual Studio ([reference](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-160)).
+
+### Build
+
+1. Start Visual Studio.
+2. Click on `Continue without code`/`Ohne Code fortfahren`.
+3. `File`/`Datei` -> `Open`/`Öffnen` -> `CMake...`.
+4. Choose the top-level `CMakeLists.txt` file.
+5. Wait till the configuration is finished.
+6. `Build`/`Erstellen` -> `Build all`/`Alle erstellen` or `Install "PROJECT NAME"`/`"PROJECT NAME" installieren`.
+7. And you are done.
+   The build results can be found in `*project_folder*/out/build/*build_configuration*/[Debug|Release|...]`
+   While the install results can be found in `*project_folder*/out/install/*build_configuration*`
+
+
 
 ## Linux
 
