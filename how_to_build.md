@@ -20,12 +20,12 @@ For exceptions, see [Special requirements](#special-requirements).
 ### Special requirements
 
 For certain modules, additional external libraries have to be manually included:
-- For ITAGeometricalAcoustics/ITAGeo: SketchUp SDK  
+- For ITAGeometricalAcoustics/ITAGeo: SketchUp SDK, minimum version 2019
   Cannot be disabled if dependency towards ITAGeo exists
 - For pigeon application: Qt, version 5.9.2 - 5.15.2  
   CMake option to disable module: `ITA_GEOMETRICAL_ACOUSTICS_WITH_APPS_QT` Default: `OFF`
 
-These dependencies have to be downloaded separately and made known to CMake. This is done via the CMake variables `SketchUpAPI_DIR` and `Qt5_DIR`. Note, that these variables can also be environment variables to work. For Qt, `Qt5_DIR` should point to `*Qt Version*\*Compiler*\lib\cmake\Qt5`.
+These dependencies have to be downloaded separately and made known to CMake. This is done via the CMake variables `SketchUpAPI_DIR` and `Qt5_DIR`. Note, that these variables can also be environment variables to work. For Qt, `Qt5_DIR` should point to `*Qt Version*\*Compiler*\lib\cmake\Qt5`. For SketchUp, `SketchUpAPI_DIR` should point to the `sketchup-yyyy` directory, e.g. `D:/ExternalLibs/SketchUp/sketchup-2021`.
 
 In case you are working at our institute, these libraries can be found on our server.
 
