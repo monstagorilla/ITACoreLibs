@@ -1,4 +1,3 @@
-
 # How to build
 
 ## Introduction
@@ -20,9 +19,11 @@ For exceptions, see [Special requirements](#special-requirements).
 
 ### Special requirements
 
-For certain projects, additional external libraries have to be manually included:
-- For ITAGeo: SketchUp SDK
-- For pigeon application: Qt, version 5.9.2 - 5.15.2
+For certain modules, additional external libraries have to be manually included:
+- For ITAGeometricalAcoustics/ITAGeo: SketchUp SDK  
+  Cannot be disabled if dependency towards ITAGeo exists
+- For pigeon application: Qt, version 5.9.2 - 5.15.2  
+  CMake option to disable module: `ITA_GEOMETRICAL_ACOUSTICS_WITH_APPS_QT` Default: `OFF`
 
 These dependencies have to be downloaded separately and made known to CMake. This is done via the CMake variables `SketchUpAPI_DIR` and `Qt5_DIR`. Note, that these variables can also be environment variables to work. For Qt, `Qt5_DIR` should point to `*Qt Version*\*Compiler*\lib\cmake\Qt5`.
 
