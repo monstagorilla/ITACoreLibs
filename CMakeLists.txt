@@ -82,7 +82,7 @@ add_subdirectory (ITASampler)
 
 #Add all-build target (can also be used to check whether ITACoreLibs are already included)
 add_custom_target( ${PROJECT_NAME}
-	DEPENDS ITABase::ITABase ITAFFT:: ITADataSources::ITADataSources ITAConvolution::ITAConvolution ITADSP::ITADSP ITACTC::ITACTC ITASampler::ITASampler
+	DEPENDS ITABase::ITABase ITAFFT::ITAFFT ITADataSources::ITADataSources ITAConvolution::ITAConvolution ITADSP::ITADSP ITACTC::ITACTC ITASampler::ITASampler
 	COMMAND ${CMAKE_COMMAND} -E echo "----------------------------------------------"
 	COMMAND ${CMAKE_COMMAND} -E echo "Finished building all ITACorelibs subprojects."
 	COMMAND ${CMAKE_COMMAND} -E echo "----------------------------------------------"
