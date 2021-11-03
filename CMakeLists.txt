@@ -87,6 +87,7 @@ add_custom_target( ${PROJECT_NAME}
 	COMMAND ${CMAKE_COMMAND} -E echo "Finished building all ITACorelibs subprojects."
 	COMMAND ${CMAKE_COMMAND} -E echo "----------------------------------------------"
 )
+set_property (TARGET ${PROJECT_NAME} PROPERTY FOLDER "BuildProjectCollections")
 
 # Install - Selective license
 if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
