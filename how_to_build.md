@@ -11,6 +11,7 @@ Our projects use CMake as a build system generator. To ease the build process, m
 
 - CMake Version 3.20.6 or higher
 - C++11 compatible compiler (only tested with Visual C++ 19)
+- When building shared libraries (Which is recommended): Python. (Needed for libsndfile)
 
 In case you are using Visual Studio, you can use the integrated CMake version. See [Windows with Visual Studio](#windows-with-visual-studio) section for further information.
 
