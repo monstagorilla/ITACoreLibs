@@ -6,11 +6,15 @@ project (
 	LANGUAGES CXX C
 )
 
-#Set the install root folder if not specified by the user
-if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_BINARY_DIR}/dist CACHE PATH "Install root directory" FORCE)
-  set(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT OFF)
-endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+# Set the install root folder if not specified by the user
+if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+	set (
+		CMAKE_INSTALL_PREFIX
+		${CMAKE_CURRENT_BINARY_DIR}/dist
+		CACHE PATH "Install root directory" FORCE
+	)
+	set (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT OFF)
+endif (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
 if (NOT DEFINED CMAKE_RUNTIME_OUTPUT_DIRECTORY AND WIN32)
 	set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIG>/bin)
@@ -22,7 +26,7 @@ if (CMAKE_GENERATOR MATCHES "Visual Studio")
 	set_property (GLOBAL PROPERTY USE_FOLDERS ON)
 endif ()
 
-#---Options---
+# ---Options---
 
 # Shared libs switch
 option (BUILD_SHARED_LIBS "Build shared librarys" ON)
@@ -36,9 +40,9 @@ option (ITA_CORE_LIBS_WITH_BENCHMARKS "Build ITACoreLibs benchmarks" OFF)
 # Because submodules (and RAVEN) require some legacy code, overwrite default settings of ITABase
 option (ITA_CORE_LIBS_LEGACY_SUPPORT "Enable legacy code support for some submodules (and RAVEN)" ON)
 
-#---End: Options---
+# ---End: Options---
 
-#---Overwrite the settings in the subprojects---
+# ---Overwrite the settings in the subprojects---
 # cmake-format: off
 set (ITA_BASE_WITH_OLD_ATOMICS ${ITA_CORE_LIBS_LEGACY_SUPPORT} CACHE BOOL "Build with old atomic code for non-C++11 compatible compilers")
 set (ITA_BASE_WITH_REGULAR_EXPRESSIONS ${ITA_CORE_LIBS_LEGACY_SUPPORT} CACHE BOOL "Build with old regular expressions code for string manipulation")
@@ -74,8 +78,7 @@ mark_as_advanced (ITA_CONVOLUTION_WITH_BENCHMARKS)
 mark_as_advanced (ITA_DSP_WITH_BENCHMARKS)
 # cmake-format: on
 
-#---END: Overwrite the settings in the subprojects---
-
+# ---END: Overwrite the settings in the subprojects---
 
 # Compiler
 if (MSVC)
@@ -91,9 +94,16 @@ add_subdirectory (ITADSP)
 add_subdirectory (ITACTC)
 add_subdirectory (ITASampler)
 
-#Add all-build target (can also be used to check whether ITACoreLibs are already included)
-add_custom_target( ${PROJECT_NAME}
-	DEPENDS ITABase::ITABase ITAFFT::ITAFFT ITADataSources::ITADataSources ITAConvolution::ITAConvolution ITADSP::ITADSP ITACTC::ITACTC ITASampler::ITASampler
+# Add all-build target (can also be used to check whether ITACoreLibs are already included)
+add_custom_target (
+	${PROJECT_NAME}
+	DEPENDS ITABase::ITABase
+			ITAFFT::ITAFFT
+			ITADataSources::ITADataSources
+			ITAConvolution::ITAConvolution
+			ITADSP::ITADSP
+			ITACTC::ITACTC
+			ITASampler::ITASampler
 	COMMAND ${CMAKE_COMMAND} -E echo "----------------------------------------------"
 	COMMAND ${CMAKE_COMMAND} -E echo "Finished building all ITACorelibs subprojects."
 	COMMAND ${CMAKE_COMMAND} -E echo "----------------------------------------------"
@@ -111,7 +121,11 @@ if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 		set (SELECTED_LICENSE "GNU General Public License")
 		set (GPL_DEPENDENCIES "FFTW3")
 		configure_file (COPYING.proto ${CMAKE_CURRENT_BINARY_DIR}/COPYING @ONLY)
-		install (FILES ${CMAKE_CURRENT_BINARY_DIR}/COPYING DESTINATION . COMPONENT ${PROJECT_NAME} )
+		install (
+			FILES ${CMAKE_CURRENT_BINARY_DIR}/COPYING
+			DESTINATION .
+			COMPONENT ${PROJECT_NAME}
+		)
 
 	endif ()
 else ()
