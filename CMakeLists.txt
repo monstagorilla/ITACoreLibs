@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.20 FATAL_ERROR)
 
 project (
 	ITACoreLibs
-	VERSION 2020.0
+	VERSION 2021.0
 	LANGUAGES CXX C
 )
 
