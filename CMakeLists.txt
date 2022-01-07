@@ -33,7 +33,7 @@ option (BUILD_SHARED_LIBS "Build shared librarys" ON)
 set (ITA_CORE_LIBS_BUILD_STATIC NOT ${BUILD_SHARED_LIBS})
 
 option (ITA_VISTA_BUILD_STATIC "Build against static ViSTA libraries" OFF)
-option (ITA_CORE_LIBS_WITH_APPS "Build ITACoreLibs applications" ON)
+option (ITA_CORE_LIBS_WITH_APPS "Build ITACoreLibs applications" OFF)
 option (ITA_CORE_LIBS_WITH_TESTS "Build ITACoreLibs tests" OFF)
 option (ITA_CORE_LIBS_WITH_BENCHMARKS "Build ITACoreLibs benchmarks" OFF)
 
