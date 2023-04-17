@@ -12,7 +12,7 @@
 	branch = master
 [submodule "ITADataSources"]
 	path = ITADataSources
-	url = https://git.rwth-aachen.de/ita/ITADataSources.git
+	url = https://github.com/monstagorilla/ITADataSources.git
 	branch = master
 [submodule "ITAFFT"]
 	path = ITAFFT
